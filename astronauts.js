@@ -35,16 +35,6 @@ astronauts.route('/astronauts')
     res.json(astronaut)
   });
 
-astronauts.route('/astronauts/:id')
-  .get((req, res) => {
-    var id = req.params.id
-    const i = arrayAstronauts.findIndex(item => {return item.id === id})
-    if (i==-1) res.sendStatus(404)
-    else{
-      res.status(200)
-      res.json(arrayAstronauts[i])
-    }
-  });
 
 astronauts.route('/astronauts/:id')
   .get((req, res) => {
